@@ -1,16 +1,9 @@
-// Root.js or App.js or wherever you use createRouter
-import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import routes from './routes';
 
-const BrowserRouter = createBrowserRouter();
+const browserRouter = createBrowserRouter(routes);
 
-const Root = () => (
-  <BrowserRouter>
-    <RouterProvider routes={routes}>
-      {/* Your app components and structure */}
-    </RouterProvider>
-  </BrowserRouter>
-);
+const root = ReactDOM.createRoot(document.getElementById("root"))
 
-export default Root;
+root.render(<RouterProvider router = {browserRouter} />)
